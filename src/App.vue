@@ -1,19 +1,34 @@
 <template>
-  <div id="nav">
-    <div>
-      <Text>Amazing</Text><br />
-      {{ projectTitle }}
+  <div class="container">
+    <div class="header">
+      <div class="header__logo">
+        <VIcon name="music_note" size="32" />
+        <span class="header__title">ShamDam Player</span>
+      </div>
+    </div>
+    <div class="wrapper"></div>
+    <div class="player-controller">
+      <button class="player-controller__prev">
+        <VIcon name="fast_rewind" size="28" />
+      </button>
+      <button class="player-controller__play">
+        <VIcon name="play_arrow" size="28" />
+      </button>
+      <button class="player-controller__next">
+        <VIcon name="fast_forward" size="28" />
+      </button>
+      <button class="player-controller__queue">
+        <VIcon name="queue_music" size="28" />
+      </button>
+      <button class="player-controller__mute">
+        <VIcon name="volume_up" size="28" />
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-import Text from "./components/Text.vue";
-
 export default {
-  components: {
-    Text,
-  },
   data() {
     return {
       projectTitle: "ShamDam Player",
@@ -23,7 +38,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import "./scss/imports";
 
 * {
   margin: 0;
@@ -32,17 +47,64 @@ export default {
 }
 
 body {
+  background-color: $backgroundColor;
   font-family: "Inter", sans-serif;
+  min-height: 100vh;
+  width: 100%;
 }
 
-#nav {
-  display: grid;
-  place-items: center;
+.container {
+  background-color: $primary;
   min-height: 100vh;
-  text-align: center;
+  width: 1140px;
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+}
 
-  span {
-    font-size: 1.25rem;
+.header {
+  width: 100%;
+  height: 70px;
+  color: $fontColor;
+  border-bottom: solid 1px $borderColor;
+  padding: 12px;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 6px;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+  }
+}
+
+.player-controller {
+  position: fixed;
+  height: 70px;
+  bottom: 0;
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  border-top: solid 10px $borderColor;
+  display: flex;
+  align-items: center;
+
+  &__mute {
+    margin-left: auto;
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+    padding: 12px;
+    color: $grey;
+  }
+
+  button:hover {
+    color: #123;
   }
 }
 </style>
