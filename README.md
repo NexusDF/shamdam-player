@@ -1,29 +1,34 @@
-# shamdam-player
+# ShamDam Player 
+## Цель
+Разработать многофункциональный аудио плеер, для получения и "прокачки" профессиональных навыков
 
-## Project setup
+## Этапы
+- [ ] Посмотреть имеющиеся аналоги
+- [ ] Ознакомиться со стеком технологий
+- [ ] Создать шаблон интерфейса
+    - [ ] Кнопки
+    - [ ] Переключатели
+    - [ ] Альбомные обложки
+    - [ ] Меню
+    - [ ] Навигация
+    - [ ] Настройки
+- [ ] Создать базовую логику приложения
+    - [ ] Воспоизведения треков
+    - [ ] Выбор треков на устройстве
+    - [ ] Загрузка и выгрузка треков
+
+Это краткий список того, что нужно сделать, будет пополняться в дальнейшем
+
+## Установка проекта
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Запуск проекта в режиме hot-reload
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
+### Запуск линтера
 ```
-npm run build
+npx eslint --fix ./src
 ```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
