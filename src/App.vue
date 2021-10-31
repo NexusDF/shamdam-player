@@ -1,14 +1,19 @@
 <template>
   <div id="nav">
     <div>
-      <span>Amazing</span><br />
+      <Text>Amazing</Text><br />
       {{ projectTitle }}
     </div>
   </div>
 </template>
 
 <script>
+import Text from "./components/Text.vue";
+
 export default {
+  components: {
+    Text,
+  },
   data() {
     return {
       projectTitle: "ShamDam Player",
