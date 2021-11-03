@@ -9,10 +9,7 @@
     <div class="wrapper">
       <div class="artist">
         <div class="artist__logo">
-          <img
-            class="artist__image"
-            src="https://avatars.mds.yandex.net/i?id=d80edbf6070eb7e56c69595ed59b849b-5354907-images-thumbs&n=13&exp=1"
-          />
+          <img class="artist__image" src="./assets/anime.jpg" />
         </div>
         <div class="artist__header">
           <div class="top">
@@ -22,13 +19,32 @@
           </div>
           <div class="bottom">
             <div class="bottom__listen-like">
-              <button class="bottom__listen">Слушать</button>
-              <button class="bottom__like"></button>
-              <button class="bottom__share"></button>
+              <button class="bottom__listen">
+                <span class="listen">
+                  <VIcon name="play_arrow" size="24" />
+                  <span>Слушать</span>
+                </span>
+              </button>
+              <button class="bottom__like">
+                <span class="like">
+                  <VIcon name="favorite_border" size="24" />
+                  <span class="count-like">1488</span>
+                </span>
+              </button>
+              <button class="bottom__share">
+                <VIcon name="share" size="24" />
+              </button>
             </div>
             <div class="bottom__radio-not">
-              <button class="bottom__radio">Радио</button>
-              <button class="button__not-recom"></button>
+              <button class="bottom__radio">
+                <span class="radio">
+                  <VIcon name="radio" size="24" />
+                  Радио
+                </span>
+              </button>
+              <button class="bottom__not-recom">
+                <VIcon name="block" size="24" />
+              </button>
             </div>
           </div>
         </div>
@@ -172,6 +188,10 @@ body {
     width: 100%;
     justify-content: space-between;
   }
+
+  button {
+    height: 40px;
+  }
 }
 
 .top {
@@ -182,6 +202,94 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
+
+  &__listen-like {
+  }
+
+  &__listen {
+    background-color: $second;
+    border-radius: 20px;
+    border: none;
+    width: 100px;
+    font-size: 13px;
+    margin-right: 10px;
+
+    .listen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &:hover {
+      background-color: $hoverYellow;
+    }
+  }
+
+  &__like {
+    border-radius: 20px;
+    border: solid 1px $greyHover;
+    max-width: 200px;
+    min-width: 100px;
+    margin-right: 10px;
+    background-color: white;
+
+    &:hover {
+      border-color: $grey;
+    }
+
+    .like {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .count-like {
+      margin-left: 5px;
+      font-size: 15px;
+    }
+  }
+
+  &__share {
+    width: 40px;
+    border-radius: 50%;
+    border: solid 1px $greyHover;
+    background-color: white;
+
+    &:hover {
+      border-color: $grey;
+    }
+  }
+
+  &__radio-not {
+    button {
+      background-color: white;
+      border: solid 1px $greyHover;
+      border-radius: 20px;
+      margin-left: 10px;
+    }
+    button:hover {
+      border-color: $grey;
+    }
+  }
+
+  &__radio {
+    width: 90px;
+
+    .radio {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__not-recom {
+    width: 40px;
+
+    span {
+      display: flex;
+      justify-content: center;
+    }
+  }
 }
 
 .menu {
@@ -214,7 +322,8 @@ body {
   display: flex;
   align-items: center;
   padding: 7px;
-  height: 50px;
+  min-height: 50px;
+  height: auto;
   width: auto;
   justify-content: space-between;
 
@@ -247,6 +356,7 @@ body {
 
 .list-song:hover {
   border: solid 2px $second;
+  padding: 5px;
 }
 
 .player-controller {
