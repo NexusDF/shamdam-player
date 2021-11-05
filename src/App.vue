@@ -14,7 +14,7 @@
         <div class="artist__header">
           <div class="top">
             <span class="top__who">ИСПОЛНИТЕЛЬ</span>
-            <h1>MC СНЮС</h1>
+            <h1 class="top__name">MC СНЮС</h1>
             <span class="top__like">Нравится всем</span>
           </div>
           <div class="bottom">
@@ -38,7 +38,7 @@
             <div class="bottom__radio-not">
               <button class="bottom__radio">
                 <span class="radio">
-                  <VIcon name="radio" size="24" />
+                  <VIcon name="podcasts" size="24" />
                   Радио
                 </span>
               </button>
@@ -187,6 +187,7 @@ body {
     flex-direction: column;
     width: 100%;
     justify-content: space-between;
+    margin-left: 10px;
   }
 
   button {
@@ -196,6 +197,20 @@ body {
 
 .top {
   width: 100%;
+
+  &__who {
+    color: $spanGrey;
+  }
+
+  &__name {
+    letter-spacing: 0.05em;
+    font-size: 45px;
+    font-weight: 700;
+  }
+
+  &__like {
+    color: $spanGrey;
+  }
 }
 
 .bottom {
@@ -316,6 +331,7 @@ body {
   display: flex;
   margin: 25px 0;
   justify-content: space-between;
+  align-items: center;
 }
 
 .list-song {
