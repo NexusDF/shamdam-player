@@ -71,12 +71,16 @@
                   </span>
                 </div>
                 <div class="list-song__buttons">
-                  <div>
-                    <button>Like</button>
-                    <button>Скачать</button>
-                  </div>
-                  <div>
-                    <span>Time</span>
+                  <div class="song-buttons">
+                    <button class="song-buttons__download">
+                      <VIcon name="download" size="28" />
+                    </button>
+                    <button class="song-buttons__like">
+                      <VIcon name="favorite_border" size="28" />
+                    </button>
+                    <div class="song-button__time">
+                      <span>4:20</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -358,6 +362,7 @@ body {
   &__wrap {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 50%;
     flex: 1 1 auto;
   }
@@ -367,7 +372,25 @@ body {
 
   &__buttons {
     display: flex;
+    align-items: center;
+
+    button {
+      border: none;
+      background: none;
+      color: $spanGrey;
+      margin-right: 15px;
+    }
+
+    button:hover {
+      color: black;
+    }
   }
+}
+
+.song-buttons {
+  min-width: 100px;
+  display: flex;
+  align-items: center;
 }
 
 .list-song:hover {
