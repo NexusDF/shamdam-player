@@ -1,12 +1,12 @@
 <template>
   <div class="container">
-    <div class="header">
+    <header class="header">
       <div class="header__logo">
         <VIcon name="music_note" size="32" />
         <span class="header__title">ShamDam Player</span>
       </div>
-    </div>
-    <div class="wrapper">
+    </header>
+    <main class="wrapper">
       <div class="artist">
         <div class="artist__logo">
           <img class="artist__image" src="./assets/anime.jpg" />
@@ -88,7 +88,7 @@
           </ul>
         </div>
       </div>
-    </div>
+    </main>
     <div class="player-controller">
       <button class="player-controller__prev">
         <VIcon name="fast_rewind" size="28" />
@@ -421,7 +421,7 @@ body {
   }
 
   button:hover {
-    color: #123;
+    color: $buttonHoverBlack;
   }
 }
 </style>

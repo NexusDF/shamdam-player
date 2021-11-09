@@ -1,5 +1,5 @@
 <template>
-  <span :style="{ 'font-size': `${size}px` }" class="material-icons">{{
+  <span :style="{ 'font-size': `${size || byDef}px` }" class="material-icons">{{
     name
   }}</span>
 </template>
@@ -9,12 +9,16 @@ export default {
   props: {
     size: {
       type: String,
-      default: "16",
     },
     name: {
       type: String,
       required: true,
     },
+  },
+  data() {
+    return {
+      byDef: "16",
+    };
   },
   name: "VIcon",
 };
