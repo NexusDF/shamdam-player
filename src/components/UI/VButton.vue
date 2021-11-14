@@ -1,5 +1,5 @@
 <template>
-  <button class="btn" :class="[`btn-${color}`, `btn-${size}`]">
+  <button class="btn" :class="`btn-${color}`">
     <slot></slot>
   </button>
 </template>
@@ -11,10 +11,6 @@ export default {
     color: {
       type: String,
       default: "white",
-    },
-    size: {
-      type: String,
-      default: "md",
     },
   },
 };
@@ -33,6 +29,7 @@ export default {
   padding: 7px;
   border: none;
   font-size: 15px;
+  height: 40px;
 
   &-yellow {
     background-color: $second;
@@ -52,7 +49,7 @@ export default {
     }
   }
 
-  &-songDarkGrey {
+  &-song-darkgrey {
     border: none;
     background: none;
     color: $spanGrey;
@@ -62,7 +59,7 @@ export default {
     }
   }
 
-  &-playerGrey {
+  &-player-grey {
     border: none;
     background: none;
     color: $grey;
@@ -70,10 +67,6 @@ export default {
     &:hover {
       color: $buttonHoverBlack;
     }
-  }
-
-  &-md {
-    height: 40px;
   }
 }
 </style>

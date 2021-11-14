@@ -7,12 +7,12 @@
           <img class="artist__image" src="./assets/anime.jpg" />
         </div>
         <div class="artist__header">
-          <div class="top">
-            <span class="top__who">ИСПОЛНИТЕЛЬ</span>
-            <h1 class="top__name">MC СНЮС</h1>
-            <span class="top__like">Нравится всем</span>
+          <div class="top-header">
+            <span class="top-header__who">ИСПОЛНИТЕЛЬ</span>
+            <h1 class="top-header__name">MC СНЮС</h1>
+            <span class="top-header__like">Нравится всем</span>
           </div>
-          <div class="bottom">
+          <div class="bottom-header">
             <v-button color="yellow">
               <VIcon name="play_arrow" size="24" />
               Слушать
@@ -24,7 +24,7 @@
             <v-button>
               <VIcon name="share" size="24" />
             </v-button>
-            <v-button color="white" style="margin-left: auto">
+            <v-button color="white" class="bottom-header__radio">
               <VIcon name="podcasts" size="24" />
               Радио
             </v-button>
@@ -56,10 +56,10 @@
                   </span>
                 </div>
                 <div class="list-song__buttons">
-                  <v-button color="songDarkGrey">
+                  <v-button color="song-darkgrey">
                     <VIcon name="download" size="28" />
                   </v-button>
-                  <v-button color="songDarkGrey">
+                  <v-button color="song-darkgrey">
                     <VIcon name="favorite_border" size="28" />
                   </v-button>
                   <div class="song-button__time">
@@ -72,7 +72,6 @@
               <div class="list-song__logo">
                 <img
                   src="https://al-school.ru/wp-content/uploads/2019/12/Granit-Vit-Portion-Snus-Open.jpg"
-                  alt=""
                 />
               </div>
               <div class="list-song__wrap">
@@ -82,10 +81,10 @@
                   </span>
                 </div>
                 <div class="list-song__buttons">
-                  <v-button color="songDarkGrey">
+                  <v-button color="song-darkgrey">
                     <VIcon name="download" size="28" />
                   </v-button>
-                  <v-button color="songDarkGrey">
+                  <v-button color="song-darkgrey">
                     <VIcon name="favorite_border" size="28" />
                   </v-button>
                   <div class="song-button__time">
@@ -180,7 +179,7 @@ body {
   }
 }
 
-.top {
+.top-header {
   width: 100%;
 
   &__who {
@@ -198,10 +197,14 @@ body {
   }
 }
 
-.bottom {
+.bottom-header {
   width: 100%;
   display: flex;
   column-gap: 8px;
+
+  &__radio {
+    margin-left: auto;
+  }
 }
 
 .menu {
