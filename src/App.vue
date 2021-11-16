@@ -2,7 +2,7 @@
   <div class="container">
     <v-header>{{ title }}</v-header>
     <main class="wrapper">
-      <div class="artist">
+      <section class="artist">
         <div class="artist__logo">
           <img class="artist__image" src="./assets/anime.jpg" />
         </div>
@@ -33,9 +33,9 @@
             </v-button>
           </div>
         </div>
-      </div>
+      </section>
       <div class="menu"></div>
-      <div class="list-of-songs">
+      <section class="list-of-songs">
         <div class="list-top">
           <h2 class="list-top__header">Популярные треки</h2>
           <span class="list-top__see-all">Смотреть все</span>
@@ -62,9 +62,7 @@
                   <v-button color="song-darkgrey">
                     <VIcon name="favorite_border" size="28" />
                   </v-button>
-                  <div class="song-button__time">
-                    <span>4:20</span>
-                  </div>
+                  <span class="list-song__time">4:20</span>
                 </div>
               </div>
             </li>
@@ -94,7 +92,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </section>
     </main>
     <VControl />
   </div>
