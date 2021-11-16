@@ -7,12 +7,12 @@
           <img class="artist__image" src="./assets/anime.jpg" />
         </div>
         <div class="artist__header">
-          <div class="top-header">
-            <span class="top-header__who">ИСПОЛНИТЕЛЬ</span>
-            <h1 class="top-header__name">MC СНЮС</h1>
-            <span class="top-header__like">Нравится всем</span>
+          <div class="artist__top">
+            <span class="artist__who">ИСПОЛНИТЕЛЬ</span>
+            <h1 class="artist__name">MC СНЮС</h1>
+            <span class="artist__like">Нравится всем</span>
           </div>
-          <div class="bottom-header">
+          <div class="artist__bottom">
             <v-button color="yellow">
               <VIcon name="play_arrow" size="24" />
               Слушать
@@ -24,7 +24,7 @@
             <v-button>
               <VIcon name="share" size="24" />
             </v-button>
-            <v-button color="white" class="bottom-header__radio">
+            <v-button color="white" class="artist__radio">
               <VIcon name="podcasts" size="24" />
               Радио
             </v-button>
@@ -45,8 +45,8 @@
             <li class="list-song">
               <div class="list-song__logo">
                 <img
+                  class="list-song__image"
                   src="https://al-school.ru/wp-content/uploads/2019/12/Granit-Vit-Portion-Snus-Open.jpg"
-                  alt=""
                 />
               </div>
               <div class="list-song__wrap">
@@ -71,6 +71,7 @@
             <li class="list-song">
               <div class="list-song__logo">
                 <img
+                  class="list-song__image"
                   src="https://al-school.ru/wp-content/uploads/2019/12/Granit-Vit-Portion-Snus-Open.jpg"
                 />
               </div>
@@ -87,9 +88,7 @@
                   <v-button color="song-darkgrey">
                     <VIcon name="favorite_border" size="28" />
                   </v-button>
-                  <div class="song-button__time">
-                    <span>4:20</span>
-                  </div>
+                  <span class="list-song__time">4:20</span>
                 </div>
               </div>
             </li>
@@ -161,13 +160,13 @@ body {
     width: 200px;
     height: 200px;
     margin-right: 10px;
+  }
 
-    img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
+  &__image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
   &__header {
@@ -177,10 +176,10 @@ body {
     justify-content: space-between;
     margin-left: 10px;
   }
-}
 
-.top-header {
-  width: 100%;
+  &__top {
+    width: 100%;
+  }
 
   &__who {
     color: $spanGrey;
@@ -195,12 +194,12 @@ body {
   &__like {
     color: $spanGrey;
   }
-}
 
-.bottom-header {
-  width: 100%;
-  display: flex;
-  column-gap: 8px;
+  &__bottom {
+    width: 100%;
+    display: flex;
+    column-gap: 8px;
+  }
 
   &__radio {
     margin-left: auto;
@@ -256,12 +255,12 @@ body {
     height: 50px;
     width: 50px;
     margin-right: 10px;
+  }
 
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 
   &__wrap {
