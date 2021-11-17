@@ -1,56 +1,41 @@
 <template>
   <div class="container">
-    <header class="header">
-      <div class="header__logo">
-        <VIcon name="music_note" size="32" />
-        <span class="header__title">ShamDam Player</span>
-      </div>
-    </header>
+    <v-header>{{ title }}</v-header>
     <main class="wrapper">
-      <div class="artist">
+      <section class="artist">
         <div class="artist__logo">
           <img class="artist__image" src="./assets/anime.jpg" />
         </div>
         <div class="artist__header">
-          <div class="top">
-            <span class="top__who">ИСПОЛНИТЕЛЬ</span>
-            <h1 class="top__name">MC СНЮС</h1>
-            <span class="top__like">Нравится всем</span>
+          <div class="artist__top">
+            <span class="artist__who">ИСПОЛНИТЕЛЬ</span>
+            <h1 class="artist__name">MC СНЮС</h1>
+            <span class="artist__like">Нравится всем</span>
           </div>
-          <div class="bottom">
-            <div class="bottom__listen-like">
-              <button class="bottom__listen">
-                <span class="listen">
-                  <VIcon name="play_arrow" size="24" />
-                  <span>Слушать</span>
-                </span>
-              </button>
-              <button class="bottom__like">
-                <span class="like">
-                  <VIcon name="favorite_border" size="24" />
-                  <span class="count-like">1488</span>
-                </span>
-              </button>
-              <button class="bottom__share">
-                <VIcon name="share" size="24" />
-              </button>
-            </div>
-            <div class="bottom__radio-not">
-              <button class="bottom__radio">
-                <span class="radio">
-                  <VIcon name="podcasts" size="24" />
-                  Радио
-                </span>
-              </button>
-              <button class="bottom__not-recom">
-                <VIcon name="block" size="24" />
-              </button>
-            </div>
+          <div class="artist__bottom">
+            <v-button color="yellow">
+              <VIcon name="play_arrow" size="24" />
+              Слушать
+            </v-button>
+            <v-button>
+              <VIcon name="favorite_border" size="24" />
+              1488
+            </v-button>
+            <v-button>
+              <VIcon name="share" size="24" />
+            </v-button>
+            <v-button color="white" class="artist__radio">
+              <VIcon name="podcasts" size="24" />
+              Радио
+            </v-button>
+            <v-button color="white">
+              <VIcon name="block" size="24" />
+            </v-button>
           </div>
         </div>
-      </div>
+      </section>
       <div class="menu"></div>
-      <div class="list-of-songs">
+      <section class="list-of-songs">
         <div class="list-top">
           <h2 class="list-top__header">Популярные треки</h2>
           <span class="list-top__see-all">Смотреть все</span>
@@ -60,8 +45,8 @@
             <li class="list-song">
               <div class="list-song__logo">
                 <img
+                  class="list-song__image"
                   src="https://al-school.ru/wp-content/uploads/2019/12/Granit-Vit-Portion-Snus-Open.jpg"
-                  alt=""
                 />
               </div>
               <div class="list-song__wrap">
@@ -71,50 +56,65 @@
                   </span>
                 </div>
                 <div class="list-song__buttons">
-                  <div class="song-buttons">
-                    <button class="song-buttons__download">
-                      <VIcon name="download" size="28" />
-                    </button>
-                    <button class="song-buttons__like">
-                      <VIcon name="favorite_border" size="28" />
-                    </button>
-                    <div class="song-button__time">
-                      <span>4:20</span>
-                    </div>
-                  </div>
+                  <v-button color="song-darkgrey">
+                    <VIcon name="download" size="28" />
+                  </v-button>
+                  <v-button color="song-darkgrey">
+                    <VIcon name="favorite_border" size="28" />
+                  </v-button>
+                  <span class="list-song__time">4:20</span>
+                </div>
+              </div>
+            </li>
+            <li class="list-song">
+              <div class="list-song__logo">
+                <img
+                  class="list-song__image"
+                  src="https://al-school.ru/wp-content/uploads/2019/12/Granit-Vit-Portion-Snus-Open.jpg"
+                />
+              </div>
+              <div class="list-song__wrap">
+                <div class="list-song__name">
+                  <span class="list-song__title">
+                    MC Снюс - Снюс is my life
+                  </span>
+                </div>
+                <div class="list-song__buttons">
+                  <v-button color="song-darkgrey">
+                    <VIcon name="download" size="28" />
+                  </v-button>
+                  <v-button color="song-darkgrey">
+                    <VIcon name="favorite_border" size="28" />
+                  </v-button>
+                  <span class="list-song__time">4:20</span>
                 </div>
               </div>
             </li>
           </ul>
         </div>
-      </div>
+      </section>
     </main>
-    <div class="player-controller">
-      <button class="player-controller__prev">
-        <VIcon name="fast_rewind" size="28" />
-      </button>
-      <button class="player-controller__play">
-        <VIcon name="play_arrow" size="28" />
-      </button>
-      <button class="player-controller__next">
-        <VIcon name="fast_forward" size="28" />
-      </button>
-      <button class="player-controller__queue">
-        <VIcon name="queue_music" size="28" />
-      </button>
-      <button class="player-controller__mute">
-        <VIcon name="volume_up" size="28" />
-      </button>
-    </div>
+    <VControl />
   </div>
 </template>
 
 <script>
+import config from "./app.config.js";
+import VHeader from "./components/VHeader.vue";
+import VControl from "./components/VControl.vue";
+
 export default {
+  created() {
+    document.title = config.title;
+  },
   data() {
     return {
-      projectTitle: "ShamDam Player",
+      title: config.title,
     };
+  },
+  components: {
+    VHeader,
+    VControl,
   },
 };
 </script>
@@ -145,25 +145,6 @@ body {
   flex-direction: column;
 }
 
-.header {
-  width: 100%;
-  height: 70px;
-  color: $fontColor;
-  border-bottom: solid 1px $borderColor;
-  padding: 12px;
-
-  &__logo {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    gap: 6px;
-  }
-
-  &__title {
-    font-size: 1.2rem;
-  }
-}
-
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -177,13 +158,13 @@ body {
     width: 200px;
     height: 200px;
     margin-right: 10px;
+  }
 
-    img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
+  &__image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
   &__header {
@@ -194,13 +175,9 @@ body {
     margin-left: 10px;
   }
 
-  button {
-    height: 40px;
+  &__top {
+    width: 100%;
   }
-}
-
-.top {
-  width: 100%;
 
   &__who {
     color: $spanGrey;
@@ -215,99 +192,15 @@ body {
   &__like {
     color: $spanGrey;
   }
-}
 
-.bottom {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-
-  &__listen-like {
-  }
-
-  &__listen {
-    background-color: $second;
-    border-radius: 20px;
-    border: none;
-    width: 100px;
-    font-size: 13px;
-    margin-right: 10px;
-
-    .listen {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    &:hover {
-      background-color: $hoverYellow;
-    }
-  }
-
-  &__like {
-    border-radius: 20px;
-    border: solid 1px $greyHover;
-    max-width: 200px;
-    min-width: 100px;
-    margin-right: 10px;
-    background-color: white;
-
-    &:hover {
-      border-color: $grey;
-    }
-
-    .like {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .count-like {
-      margin-left: 5px;
-      font-size: 15px;
-    }
-  }
-
-  &__share {
-    width: 40px;
-    border-radius: 50%;
-    border: solid 1px $greyHover;
-    background-color: white;
-
-    &:hover {
-      border-color: $grey;
-    }
-  }
-
-  &__radio-not {
-    button {
-      background-color: white;
-      border: solid 1px $greyHover;
-      border-radius: 20px;
-      margin-left: 10px;
-    }
-    button:hover {
-      border-color: $grey;
-    }
+  &__bottom {
+    width: 100%;
+    display: flex;
+    column-gap: 8px;
   }
 
   &__radio {
-    width: 90px;
-
-    .radio {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-
-  &__not-recom {
-    width: 40px;
-
-    span {
-      display: flex;
-      justify-content: center;
-    }
+    margin-left: auto;
   }
 }
 
@@ -347,16 +240,25 @@ body {
   width: auto;
   justify-content: space-between;
 
+  &:hover {
+    border: solid 2px $second;
+    padding: 5px;
+  }
+
+  & + & {
+    margin-top: -2px;
+  }
+
   &__logo {
     height: 50px;
     width: 50px;
     margin-right: 10px;
+  }
 
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
+  &__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
 
   &__wrap {
@@ -367,61 +269,10 @@ body {
     flex: 1 1 auto;
   }
 
-  &__name {
-  }
-
   &__buttons {
     display: flex;
     align-items: center;
-
-    button {
-      border: none;
-      background: none;
-      color: $spanGrey;
-      margin-right: 15px;
-    }
-
-    button:hover {
-      color: black;
-    }
-  }
-}
-
-.song-buttons {
-  min-width: 100px;
-  display: flex;
-  align-items: center;
-}
-
-.list-song:hover {
-  border: solid 2px $second;
-  padding: 5px;
-}
-
-.player-controller {
-  position: fixed;
-  height: 70px;
-  bottom: 0;
-  max-width: 1140px;
-  width: 100%;
-  margin: 0 auto;
-  border-top: solid 10px $borderColor;
-  display: flex;
-  align-items: center;
-
-  &__mute {
-    margin-left: auto;
-  }
-
-  button {
-    border: none;
-    background-color: transparent;
-    padding: 12px;
-    color: $grey;
-  }
-
-  button:hover {
-    color: $buttonHoverBlack;
+    column-gap: 8px;
   }
 }
 </style>
