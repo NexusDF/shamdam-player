@@ -12,26 +12,26 @@
             <h1 class="artist__name">MC СНЮС</h1>
             <span class="artist__like">Нравится всем</span>
           </div>
-          <div class="artist__bottom">
-            <v-button color="yellow">
-              <VIcon name="play_arrow" size="24" />
-              Слушать
-            </v-button>
-            <v-button>
-              <VIcon name="favorite_border" size="24" />
-              1488
-            </v-button>
-            <v-button>
-              <VIcon name="share" size="24" />
-            </v-button>
-            <v-button color="white" class="artist__radio">
-              <VIcon name="podcasts" size="24" />
-              Радио
-            </v-button>
-            <v-button color="white">
-              <VIcon name="block" size="24" />
-            </v-button>
-          </div>
+        </div>
+        <div class="artist__bottom">
+          <v-button color="yellow">
+            <VIcon name="play_arrow" size="24" />
+            Слушать
+          </v-button>
+          <v-button>
+            <VIcon name="favorite_border" size="24" />
+            1488
+          </v-button>
+          <v-button>
+            <VIcon name="share" size="24" />
+          </v-button>
+          <v-button color="white" class="artist__radio">
+            <VIcon name="podcasts" size="24" />
+            Радио
+          </v-button>
+          <v-button color="white">
+            <VIcon name="block" size="24" />
+          </v-button>
         </div>
       </section>
       <div class="menu"></div>
@@ -152,12 +152,15 @@ body {
 }
 
 .artist {
-  display: flex;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  row-gap: 8px;
 
   &__logo {
     width: 200px;
     height: 200px;
     margin-right: 10px;
+    grid-row: span 2;
   }
 
   &__image {
@@ -197,6 +200,7 @@ body {
     width: 100%;
     display: flex;
     column-gap: 8px;
+    align-self: end;
   }
 
   &__radio {
@@ -273,6 +277,29 @@ body {
     display: flex;
     align-items: center;
     column-gap: 8px;
+  }
+}
+
+@media screen {
+  @media (max-width: 1200px) {
+    .container {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .artist {
+      gap: 20px;
+
+      &__header {
+        grid-row: span 2;
+        align-self: center;
+      }
+
+      &__bottom {
+        grid-column: span 2;
+      }
+    }
   }
 }
 </style>

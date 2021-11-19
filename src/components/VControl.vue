@@ -37,4 +37,12 @@
     margin-left: auto;
   }
 }
+
+@media screen {
+  @media (max-width: 768px) {
+    .player-controller {
+      padding: 0 10px;
+    }
+  }
+}
 </style>
